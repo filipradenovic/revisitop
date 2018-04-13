@@ -38,7 +38,7 @@ for i = 1:cfg.nq
 	%%------------------------------------------------------
 	%% Perform image processing here, eg, feature extraction
 	%%------------------------------------------------------
-	fprintf('>> Processing query image %d\n', i);
+	fprintf('>> %s: Processing query image %d\n', test_dataset, i);
 end
 
 % database images
@@ -47,5 +47,5 @@ for i = 1:cfg.n
 	%%------------------------------------------------------
 	%% Perform image processing here, eg, feature extraction
 	%%------------------------------------------------------
-	fprintf('>> Processing database image %d\n', i);
+	fprintf('>> %s: Processing database image %d\n', test_dataset, i);
 end
