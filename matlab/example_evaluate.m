@@ -41,6 +41,7 @@ fprintf('>> %s: Retrieval...\n', test_dataset);
 sim = X'*Q;
 [sim, ranks] = sort(sim, 'descend');
 
+% evaluate performance and print results
 if strcmp(test_dataset, 'oxford5k') || strcmp(test_dataset, 'paris6k')
 	% original evaluation
 	map = compute_map (ranks, cfg.gnd);	
