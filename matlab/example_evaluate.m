@@ -45,7 +45,7 @@ sim = X'*Q;
 if strcmp(test_dataset, 'oxford5k') || strcmp(test_dataset, 'paris6k')
 	% original evaluation
 	map = compute_map (ranks, cfg.gnd);	
-	fprintf('>> %s: mAP = %.2f\n', test_dataset, 100*map);
+	fprintf('>> %s: mAP %.2f\n', test_dataset, 100*map);
 elseif strcmp(test_dataset, 'roxford5k') || strcmp(test_dataset, 'rparis6k')
 	% revisited evaluation
 
@@ -62,5 +62,5 @@ elseif strcmp(test_dataset, 'roxford5k') || strcmp(test_dataset, 'rparis6k')
 	[mapH, apsH, mprH, prsH] = compute_map (ranks, gnd, ks);
 	
 	fprintf('>> %s: mAP E: %.2f, M: %.2f, H: %.2f\n', test_dataset, 100*mapE, 100*mapM, 100*mapH);
-	fprintf('>> %s: mp@k[%d %d %d] E: [%.2f %.2f %.2f], M: [%.2f %.2f %.2f], H: [%.2f %.2f %.2f]\n', test_dataset, ks(1), ks(2), ks(3), 100*mprE, 100*mprM, 100*mprH);
+	fprintf('>> %s: mP@k[%d %d %d] E: [%.2f %.2f %.2f], M: [%.2f %.2f %.2f], H: [%.2f %.2f %.2f]\n', test_dataset, ks(1), ks(2), ks(3), 100*mprE, 100*mprM, 100*mprH);
 end
