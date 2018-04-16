@@ -1,6 +1,6 @@
 # Revisiting Oxford and Paris: Large-Scale Image Retrieval Benchmarking
 
-<img src="http://cmp.felk.cvut.cz/revisitop/img/revisitop_teaser.png" width=\textwidth/>
+<img src="http://cmp.felk.cvut.cz/revisitop/img/revisitop_teaser_medium.png" width=\textwidth/>
 
 ## MATLAB
 
