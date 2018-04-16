@@ -1,4 +1,4 @@
-# EXAMPLE_READ_IMAGES  Code to read images for ROxford and RParis datasets.
+# EXAMPLE_PROCESS_IMAGES  Code to read and process images for ROxford and RParis datasets.
 # Revisited protocol requires query images to be removed from the database, and cropped prior to any processing.
 # This code makes sure the protocol is strictly followed.
 #
@@ -13,15 +13,15 @@ import numpy as np
 from PIL import Image
 
 from dataset import configdataset
+from download import download_datasets
 
 #---------------------------------------------------------------------
 # Set data folder and testing parameters
 #---------------------------------------------------------------------
 # Set data folder, change if you have downloaded the data somewhere else
 data_root = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'data')
-# Check, and, if necessary, download test data (Oxford and Pairs), 
-# original and revisited annotation, and example feature vectors for evaluation
-# download_test(data_root)
+# Check, and, if necessary, download test data (Oxford and Pairs) and revisited annotation
+download_datasets(data_root)
 
 # Set test dataset: roxford5k | rparis6k
 test_dataset = 'roxford5k'
