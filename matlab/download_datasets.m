@@ -1,7 +1,7 @@
 function download_datasets(data_dir)
 % DOWNLOAD_DATASETS Checks, and, if required, downloads the necessary datasets for the testing.
 %
-%   download_datasets(DATA_ROOT) checks if the data and networks necessary for running the testing script exist.
+%   download_datasets(DATA_ROOT) checks if the data necessary for running the example script exist.
 %   If not it downloads it in the folder structure:
 %     DATA_ROOT/datasets/roxford5k/ : folder with Oxford images
 %     DATA_ROOT/datasets/rparis6k/  : folder with Paris images
@@ -65,4 +65,3 @@ function download_datasets(data_dir)
             system(sprintf('wget %s -O %s', gnd_src_file, gnd_dst_file));
         end
     end
-    

@@ -16,8 +16,9 @@ clear;
 % Set data folder, change if you have downloaded the data somewhere else
 data_root = fullfile(fileparts(fileparts(mfilename('fullpath'))), 'data');
 % Check, and, if necessary, download test data (Oxford and Pairs), 
-% original and revisited annotation, and example feature vectors for evaluation
-% download_test(data_root); 
+% revisited annotation, and example feature vectors for evaluation
+download_datasets(data_root); 
+download_features(data_root); 
 
 % Set test dataset: roxford5k | rparis6k
 test_dataset = 'roxford5k';
