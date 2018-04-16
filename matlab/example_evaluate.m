@@ -1,5 +1,5 @@
 % EXAMPLE_EVALUATE  Code to evaluate example results on ROxford and RParis datasets.
-% Revisited protocol has 3 difficulty setups: Easy (E), Medium (M), and Hard(H), 
+% Revisited protocol has 3 difficulty setups: Easy (E), Medium (M), and Hard (H), 
 % and evaluates the performance using mean average precision (mAP), as well as mean precision @ k (mP@k)
 %
 % More details about the revisited annotation and evaluation can be found in:
