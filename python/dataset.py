@@ -6,18 +6,8 @@ from scipy.io import loadmat
 def configdataset(dataset, dir_main):
 
 	dataset = dataset.lower()
-	if dataset == 'oxford5k' or dataset == 'paris6k':
-		cfg = {'ext' : '.jpg', 'qext' : '.jpg', 'dir_data' : os.path.join(dir_main, dataset)}
-		cfg['gnd_fname'] = os.path.join(cfg['dir_data'], 'gnd_' + dataset + '.mat')
-		gt = loadmat(cfg['gnd_fname'])
-		cfg['imlist'] = [str(''.join(im)) for iml in np.squeeze(gt['imlist']) for im in iml]
-		cfg['qidx'] = np.squeeze(gt['qidx']) - 1
-		cfg['qimlist'] = [cfg['imlist'][i] for i in cfg['qidx']]
-		cfg['gnd'] = gnd_mat2py(gt['gnd'])
-		cfg['n'] = len(cfg['imlist'])
-		cfg['nq'] = len(cfg['qimlist'])
 
-	elif dataset == 'roxford5k' or dataset == 'rparis6k':
+	if dataset == 'roxford5k' or dataset == 'rparis6k':
 		cfg = {'ext' : '.jpg', 'qext' : '.jpg', 'dir_data' : os.path.join(dir_main, dataset)}
 		cfg['gnd_fname'] = os.path.join(cfg['dir_data'], 'gnd_' + dataset + '.mat')
 		gt = loadmat(cfg['gnd_fname'])
