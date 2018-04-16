@@ -1,5 +1,5 @@
-% EXAMPLE_READ_IMAGES  Code to read images for Oxford, ROxford, Paris, and RParis datasets.
-% Revisited protocol (ROxford and RParis) requires query images to be removed from the database, and cropped prior to any processing.
+% EXAMPLE_READ_IMAGES  Code to read images for ROxford and RParis datasets.
+% Revisited protocol requires query images to be removed from the database, and cropped prior to any processing.
 % This code makes sure the protocol is strictly followed.
 %
 % More details about the revisited annotation and evaluation can be found in:
@@ -19,7 +19,7 @@ data_root = fullfile(fileparts(fileparts(mfilename('fullpath'))), 'data');
 % original and revisited annotation, and example feature vectors for evaluation
 % download_test(data_root); 
 
-% Set test dataset: oxford5k | roxford5k | paris6k | rparis6k
+% Set test dataset: roxford5k | rparis6k
 test_dataset = 'roxford5k';
 
 %---------------------------------------------------------------------
