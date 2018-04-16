@@ -29,7 +29,7 @@ test_dataset = 'roxford5k';
 
 fprintf('>> %s: Evaluating test dataset...\n', test_dataset);		
 % config file for the dataset
-% separates query image list from database image list, if revisited protocol used
+% separates query image list from database image list, when revisited protocol used
 cfg = configdataset (test_dataset, fullfile(data_root, 'datasets/')); 
 
 % load query and database features
