@@ -9,13 +9,13 @@ function download_features(data_dir)
         mkdir(data_dir);
     end
 
-    % Create datasets folder if it does not exist
+    % Create features folder if it does not exist
     features_dir = fullfile(data_dir, 'features');
     if ~exist(features_dir, 'dir')
         mkdir(features_dir);
     end
 
-    % Download datasets folders datasets/DATASETNAME/
+    % Download example features
     datasets = {'roxford5k', 'rparis6k'};
     for di = 1:numel(datasets)
         dataset = datasets{di};
