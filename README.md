@@ -54,12 +54,12 @@ It automatically downloads dataset images, revisited annotation file, and exampl
 Final output should look like this (depending on the selected ```test_dataset```):
 ```
 >> roxford5k: mAP E: 84.81, M: 64.67, H: 38.47
->> roxford5k: mP@k[1 5 10] E: [97.06 92.06 86.49], M: [97.14 90.67 84.67], H: [81.43 63.00 53.00]
+>> roxford5k: mP@k[ 1  5 10] E: [97.06 92.06 86.49], M: [97.14 90.67 84.67], H: [81.43 63.   53.  ]
 ```
 or
 ```
->> rparis6k: mAP E: 92.12, M: 77.20, H: 56.32
->> rparis6k: mP@k[1 5 10] E: [100.00 97.14 96.14], M: [100.00 98.86 98.14], H: [94.29 90.29 89.14]
+>> rparis6k: mAP E: 92.12, M: 77.2, H: 56.32
+>> rparis6k: mP@k[ 1  5 10] E: [100.    97.14  96.14], M: [100.    98.86  98.14], H: [94.29 90.29 89.14]
 ```
 
 ## Related publication
