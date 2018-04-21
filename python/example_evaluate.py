@@ -33,13 +33,13 @@ test_dataset = 'roxford5k'
 # Evaluate
 #---------------------------------------------------------------------
 
-print('>> {}: Evaluating test dataset...'.format(test_dataset))	
+print('>> {}: Evaluating test dataset...'.format(test_dataset)) 
 # config file for the dataset
 # separates query image list from database image list, when revisited protocol used
 cfg = configdataset(test_dataset, os.path.join(data_root, 'datasets'))
 
 # load query and database features
-print('>> {}: Loading features...'.format(test_dataset))	
+print('>> {}: Loading features...'.format(test_dataset))    
 features = loadmat(os.path.join(data_root, 'features', '{}_resnet_rsfm120k_gem.mat'.format(test_dataset)))
 Q = features['Q']
 X = features['X']
@@ -58,28 +58,28 @@ ks = [1, 5, 10]
 # search for easy
 gnd_t = []
 for i in range(len(gnd)):
-	g = {}
-	g['ok'] = np.concatenate([gnd[i]['easy']])
-	g['junk'] = np.concatenate([gnd[i]['junk'], gnd[i]['hard']])
-	gnd_t.append(g)
+    g = {}
+    g['ok'] = np.concatenate([gnd[i]['easy']])
+    g['junk'] = np.concatenate([gnd[i]['junk'], gnd[i]['hard']])
+    gnd_t.append(g)
 mapE, apsE, mprE, prsE = compute_map(ranks, gnd_t, ks)
 
 # search for easy & hard
 gnd_t = []
 for i in range(len(gnd)):
-	g = {}
-	g['ok'] = np.concatenate([gnd[i]['easy'], gnd[i]['hard']])
-	g['junk'] = np.concatenate([gnd[i]['junk']])
-	gnd_t.append(g)
+    g = {}
+    g['ok'] = np.concatenate([gnd[i]['easy'], gnd[i]['hard']])
+    g['junk'] = np.concatenate([gnd[i]['junk']])
+    gnd_t.append(g)
 mapM, apsM, mprM, prsM = compute_map(ranks, gnd_t, ks)
 
 # search for hard
 gnd_t = []
 for i in range(len(gnd)):
-	g = {}
-	g['ok'] = np.concatenate([gnd[i]['hard']])
-	g['junk'] = np.concatenate([gnd[i]['junk'], gnd[i]['easy']])
-	gnd_t.append(g)
+    g = {}
+    g['ok'] = np.concatenate([gnd[i]['hard']])
+    g['junk'] = np.concatenate([gnd[i]['junk'], gnd[i]['easy']])
+    gnd_t.append(g)
 mapH, apsH, mprH, prsH = compute_map(ranks, gnd_t, ks)
 
 print('>> {}: mAP E: {}, M: {}, H: {}'.format(test_dataset, np.around(mapE*100, decimals=2), np.around(mapM*100, decimals=2), np.around(mapH*100, decimals=2)))

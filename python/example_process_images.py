@@ -36,22 +36,22 @@ def pil_loader(path):
         img = Image.open(f)
         return img.convert('RGB')
 
-print('>> {}: Processing test dataset...'.format(test_dataset))	
+print('>> {}: Processing test dataset...'.format(test_dataset)) 
 # config file for the dataset
 # separates query image list from database image list, if revisited protocol used
 cfg = configdataset(test_dataset, os.path.join(data_root, 'datasets'))
 
 # query images
 for i in np.arange(cfg['nq']):
-	qim = pil_loader(cfg['qim_fname'](cfg, i)).crop(cfg['gnd'][i]['bbx'])
-	##------------------------------------------------------
-	## Perform image processing here, eg, feature extraction
-	##------------------------------------------------------
-	print('>> {}: Processing query image {}'.format(test_dataset, i+1))
+    qim = pil_loader(cfg['qim_fname'](cfg, i)).crop(cfg['gnd'][i]['bbx'])
+    ##------------------------------------------------------
+    ## Perform image processing here, eg, feature extraction
+    ##------------------------------------------------------
+    print('>> {}: Processing query image {}'.format(test_dataset, i+1))
 
 for i in np.arange(cfg['n']):
-	im = pil_loader(cfg['im_fname'](cfg, i))
-	##------------------------------------------------------
-	## Perform image processing here, eg, feature extraction
-	##------------------------------------------------------
-	print('>> {}: Processing database image {}'.format(test_dataset, i+1))
+    im = pil_loader(cfg['im_fname'](cfg, i))
+    ##------------------------------------------------------
+    ## Perform image processing here, eg, feature extraction
+    ##------------------------------------------------------
+    print('>> {}: Processing database image {}'.format(test_dataset, i+1))
