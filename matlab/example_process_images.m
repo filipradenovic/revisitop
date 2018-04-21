@@ -25,26 +25,26 @@ test_dataset = 'roxford5k';
 % Read and process images
 %---------------------------------------------------------------------
 
-fprintf('>> %s: Processing test dataset...\n', test_dataset);		
+fprintf('>> %s: Processing test dataset...\n', test_dataset);       
 % config file for the dataset
 % separates query image list from database image list, if revisited protocol used
 cfg = configdataset (test_dataset, fullfile(data_root, 'datasets/')); 
 
 % query images
 for i = 1:cfg.nq
-	% crop query region before any processing
-	qim = crop_qim(imread(cfg.qim_fname(cfg, i)), cfg.gnd(i).bbx);
-	%%------------------------------------------------------
-	%% Perform image processing here, eg, feature extraction
-	%%------------------------------------------------------
-	fprintf('>> %s: Processing query image %d\n', test_dataset, i);
+    % crop query region before any processing
+    qim = crop_qim(imread(cfg.qim_fname(cfg, i)), cfg.gnd(i).bbx);
+    %%------------------------------------------------------
+    %% Perform image processing here, eg, feature extraction
+    %%------------------------------------------------------
+    fprintf('>> %s: Processing query image %d\n', test_dataset, i);
 end
 
 % database images
 for i = 1:cfg.n
-	im = imread(cfg.im_fname(cfg, i));
-	%%------------------------------------------------------
-	%% Perform image processing here, eg, feature extraction
-	%%------------------------------------------------------
-	fprintf('>> %s: Processing database image %d\n', test_dataset, i);
+    im = imread(cfg.im_fname(cfg, i));
+    %%------------------------------------------------------
+    %% Perform image processing here, eg, feature extraction
+    %%------------------------------------------------------
+    fprintf('>> %s: Processing database image %d\n', test_dataset, i);
 end

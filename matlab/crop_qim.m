@@ -4,5 +4,5 @@ function im = crop_qim(im, bbx)
 %   IM = crop_qim(IM, BBX)  Crop IM with BBX.
 %   
 
-	bbx = uint32(bbx + 1); % gnd bbx is zero-based, matlab is one-based
-	im = im(bbx(2):min(bbx(4),size(im,1)), bbx(1):min(bbx(3),size(im,2)), :); 
+    bbx = uint32(bbx + 1); % gnd bbx is zero-based, matlab is one-based
+    im = im(bbx(2):min(bbx(4),size(im,1)), bbx(1):min(bbx(3),size(im,2)), :); 
