@@ -16,16 +16,16 @@ Example script that describes how to: read and process database images; read, cr
 ```
 >> example_process_images
 ```
-It automatically downloads dataset images, and revisited annotation file.
+It automatically downloads dataset images, and the revisited annotation file.
 
 ### Evaluate results
 
-Example script that describes how to evaluate revisited annotation and three protocol setups:
+Example script that describes how to evaluate according to the revisited annotation and the three protocol setups:
 ```
 >> example_evaluate
 ```
-It automatically downloads dataset images, revisited annotation file, and example features (R-[37]-GeM from the paper) to be used in the evaluation.
-Final output should look like this (depending on the selected ```test_dataset```):
+It automatically downloads dataset images, the revisited annotation file, and example features (R-[37]-GeM from the paper) to be used in the evaluation.
+The final output should look like this (depending on the selected ```test_dataset```):
 ```
 >> roxford5k: mAP E: 84.81, M: 64.67, H: 38.47
 >> roxford5k: mP@k[1 5 10] E: [97.06 92.06 86.49], M: [97.14 90.67 84.67], H: [81.43 63.00 53.00]
@@ -46,16 +46,16 @@ Example script that describes how to: read and process database images; read, cr
 ```
 >> python3 example_process_images
 ```
-It automatically downloads dataset images, and revisited annotation file.
+It automatically downloads dataset images, and the revisited annotation file.
 
 ### Evaluate results
 
-Example script that describes how to evaluate revisited annotation and three protocol setups:
+Example script that describes how to evaluate according to the revisited annotation and the three protocol setups:
 ```
 >> python3 example_evaluate
 ```
 It automatically downloads dataset images, revisited annotation file, and example features (R-[37]-GeM from the paper) to be used in the evaluation.
-Final output should look like this (depending on the selected ```test_dataset```):
+The final output should look like this (depending on the selected ```test_dataset```):
 ```
 >> roxford5k: mAP E: 84.81, M: 64.67, H: 38.47
 >> roxford5k: mP@k[ 1  5 10] E: [97.06 92.06 86.49], M: [97.14 90.67 84.67], H: [81.43 63.   53.  ]
