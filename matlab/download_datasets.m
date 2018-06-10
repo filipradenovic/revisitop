@@ -65,4 +65,3 @@ function download_datasets(data_dir)
             system(sprintf('wget %s -O %s', gnd_src_file, gnd_dst_file));
         end
     end
-    
