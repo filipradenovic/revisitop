@@ -24,7 +24,10 @@ function download_distractors(data_dir)
     dst_dir_tmp = fullfile(data_dir, 'datasets', dataset, 'jpg_tmp');
     if ~exist(dst_dir, 'dir')
         fprintf('>> Dataset %s directory does not exist.\n>> Creating: %s\n', dataset, dst_dir);
-        mkdir(dst_dir_tmp);
+        % first create a tmp folder
+        if ~exist(dst_dir_tmp, 'dir')
+            mkdir(dst_dir_tmp);
+        end
         for dfi = 1:nfiles
             dl_file = sprintf(dl_files, dfi);
             src_file = fullfile(src_dir, dl_file);
