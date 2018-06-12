@@ -16,7 +16,7 @@ data_root = fullfile(fileparts(fileparts(mfilename('fullpath'))), 'data');
 % Check, and, if necessary, download distractor dataset
 download_distractors(data_root); 
 % Set up the dataset name
-distractors_dataset = 'revistop1m';
+distractors_dataset = 'revisitop1m';
 
 %---------------------------------------------------------------------
 % Read and process images
@@ -24,7 +24,7 @@ distractors_dataset = 'revistop1m';
 
 fprintf('>> %s: Processing dataset...\n', distractors_dataset);       
 % config file for the dataset
-cfg = configdataset (distractors_dataset, fullfile(data_root, 'datasets')); 
+cfg = configdataset (distractors_dataset, fullfile(data_root, 'datasets/')); 
 
 % images
 for i = 1:cfg.n
@@ -32,5 +32,5 @@ for i = 1:cfg.n
     %%------------------------------------------------------
     %% Perform image processing here, eg, feature extraction
     %%------------------------------------------------------
-    fprintf('>> %s: Processing image %d\n', test_dataset, i);
+    fprintf('>> %s: Processing image %d\n', distractors_dataset, i);
 end

@@ -59,7 +59,7 @@ function cfg = config_rparis (cfg)
 function cfg = config_revisitop1m (cfg)
   % load image list
   cfg.imlist_fname = [cfg.dir_data 'revisitop1m.txt'];
-  cfg.imlist = textread(cfg.imlist_fname,'%s');
+  cfg.imlist = textread(cfg.imlist_fname, '%s');
   cfg.n = length (cfg.imlist);   % number of images
 
 %----------------------------------------------------
