@@ -15,7 +15,13 @@ def configdataset(dataset, dir_main):
         cfg['qimlist'] = [str(''.join(im)) for iml in np.squeeze(gt['qimlist']) for im in iml]
         cfg['gnd'] = gnd_mat2py(gt['gnd'])
         cfg['n'] = len(cfg['imlist'])
-        cfg['nq'] = len(cfg['qimlist'])     
+        cfg['nq'] = len(cfg['qimlist']) 
+
+    elif dataset == 'revisitop1m':
+        cfg = {'ext' : '.jpg', 'dir_data' : os.path.join(dir_main, dataset)}
+        cfg['imlist_fname'] = os.path.join(cfg['dir_data'], '{}.txt'.format(dataset))
+        cfg['imlist'] = read_imlist(cfg['imlist_fname'])
+        cfg['n'] = len(cfg['imlist'])
 
     else:
         raise ValueError('Unknown dataset: %s!' % dataset)
@@ -29,11 +35,22 @@ def configdataset(dataset, dir_main):
 
     return cfg
 
+
 def config_imname(cfg, i):
-    return os.path.join(cfg['dir_images'], cfg['imlist'][i] + cfg['ext'])
+    _, ext = os.path.splitext(cfg['imlist'][i])
+    if ext:
+        return os.path.join(cfg['dir_images'], cfg['imlist'][i])
+    else:    
+        return os.path.join(cfg['dir_images'], cfg['imlist'][i] + cfg['ext'])
+
 
 def config_qimname(cfg, i):
-    return os.path.join(cfg['dir_images'], cfg['qimlist'][i] + cfg['qext'])
+    _, ext = os.path.splitext(cfg['qimlist'][i])
+    if ext:
+        return os.path.join(cfg['dir_images'], cfg['qimlist'][i])
+    else:    
+        return os.path.join(cfg['dir_images'], cfg['qimlist'][i] + cfg['qext'])
+
 
 def gnd_mat2py(gnd):
     gnd = np.squeeze(gnd);
@@ -68,3 +85,10 @@ def gnd_mat2py(gnd):
         gndpy.append(gndpyi)
 
     return gndpy
+
+
+def read_imlist(imlist_fn):
+    file = open(imlist_fn, 'r')
+    imlist = file.read().splitlines();
+    file.close()
+    return imlist
