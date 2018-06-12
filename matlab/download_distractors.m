@@ -40,7 +40,6 @@ function download_distractors(data_dir)
                     try
                         fprintf('>> [%d/%d] Downloading dataset %s archive %s...\n', dfi, nfiles, dataset, dl_file);
                         websave(dst_file_tmp, src_file);
-                        % system(sprintf('mv %s %s', dst_file_tmp, dst_file));
                         movefile(dst_file_tmp, dst_file);
                         break
                     catch
@@ -53,14 +52,11 @@ function download_distractors(data_dir)
             dl_file = sprintf(dl_files, dfi);
             dst_file = fullfile(dst_dir_tmp, dl_file);
             fprintf('>> [%d/%d] Extracting dataset %s archive %s...\n', dfi, nfiles, dataset, dl_file);
-            % system(sprintf('tar -zxf %s -C %s', dst_file, dst_dir_tmp));
             untar(dst_file, dst_dir_tmp);
             fprintf('>> [%d/%d] Extracted, deleting dataset %s archive %s...\n', dfi, nfiles, dataset, dl_file);
-            % system(sprintf('rm %s', dst_file));
             delete(dst_file);
         end
         % rename tmp folder
-        % system(sprintf('mv %s %s', dst_dir_tmp, dst_dir));
         movefile(dst_dir_tmp, dst_dir);
     end
     gnd_src_dir = fullfile('http://ptak.felk.cvut.cz/revisitop/revisitop1m/');
@@ -70,6 +66,5 @@ function download_distractors(data_dir)
     gnd_dst_file = fullfile(gnd_dst_dir, gnd_dl_file);
     if ~exist(gnd_dst_file, 'file')
         fprintf('>> Downloading dataset %s image list file...\n', dataset);
-        % system(sprintf('wget %s -O %s', gnd_src_file, gnd_dst_file));
         websave(gnd_dst_file, gnd_src_file);
     end
