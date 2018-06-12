@@ -5,14 +5,19 @@ switch lower(dataset)
   case 'roxford5k'
     params.ext = '.jpg';
     params.qext = '.jpg';
-    params.dir_data= [dir_main 'roxford5k/'];
+    params.dir_data = [dir_main 'roxford5k/'];
     cfg = config_roxford (params);
 
   case 'rparis6k'
     params.ext = '.jpg';
     params.qext = '.jpg';    
-    params.dir_data= [dir_main 'rparis6k/'];
+    params.dir_data = [dir_main 'rparis6k/'];
     cfg = config_rparis (params);
+
+  case 'revisitop1m'
+    params.ext = '.jpg';
+    params.dir_data = [dir_main 'revisitop1m/'];
+    cfg = config_revisitop1m (params);
 
   otherwise, error ('Unkown dataset %s\n', dataset);
 end
@@ -48,6 +53,14 @@ function cfg = config_rparis (cfg)
   cfg.gnd = gnd;
   cfg.n = length (cfg.imlist);   % number of database images
   cfg.nq = length (cfg.qimlist);    % number of query images
+
+%----------------------------------------------------
+%----------------------------------------------------
+function cfg = config_revisitop1m (cfg)
+  % load image list
+  cfg.imlist_fname = [cfg.dir_data 'revisitop1m.txt'];
+  cfg.imlist = textread(cfg.imlist_fname,'%s');
+  cfg.n = length (cfg.imlist);   % number of images
 
 %----------------------------------------------------
 %----------------------------------------------------
