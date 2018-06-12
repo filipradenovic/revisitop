@@ -36,9 +36,17 @@ function download_distractors(data_dir)
             if exist(dst_file)
                 fprintf('>> [%d/%d] Skipping dataset %s archive %s, already exists...\n', dfi, nfiles, dataset, dl_file);
             else
-                fprintf('>> [%d/%d] Downloading dataset %s archive %s...\n', dfi, nfiles, dataset, dl_file);
-                websave(dst_file_tmp, src_file);
-                system(sprintf('mv %s %s', dst_file_tmp, dst_file));
+                while 1
+                    try
+                        fprintf('>> [%d/%d] Downloading dataset %s archive %s...\n', dfi, nfiles, dataset, dl_file);
+                        websave(dst_file_tmp, src_file);
+                        % system(sprintf('mv %s %s', dst_file_tmp, dst_file));
+                        movefile(dst_file_tmp, dst_file);
+                        break
+                    catch
+                        fprintf('>>>> Download failed. Try this one again...\n');
+                    end
+                end
             end
         end
         for dfi = 1:nfiles
