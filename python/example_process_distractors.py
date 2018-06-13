@@ -8,7 +8,7 @@
 import os
 import numpy as np
 
-from PIL import Image
+from PIL import Image, ImageFile
 
 from dataset import configdataset
 from download import download_distractors
@@ -29,7 +29,10 @@ distractors_dataset = 'revisitop1m'
 #---------------------------------------------------------------------
 
 def pil_loader(path):
-    # open path as file to avoid ResourceWarning (https://github.com/python-pillow/Pillow/issues/835)
+    # to avoid crashing for truncated (corrupted images)
+    ImageFile.LOAD_TRUNCATED_IMAGES = True
+    # open path as file to avoid ResourceWarning 
+    # (https://github.com/python-pillow/Pillow/issues/835)
     with open(path, 'rb') as f:
         img = Image.open(f)
         return img.convert('RGB')
