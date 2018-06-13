@@ -12,11 +12,14 @@ Tested with MATLAB R2017a on Debian 8.1.
 
 ### Process images
 
-Example script that describes how to: read and process database images; read, crop and process query images:
+This example script first downloads dataset images and the revisited annotation files. Then, it describes how to: read and process database images; read, crop and process query images:
 ```
 >> example_process_images
 ```
-It automatically downloads dataset images, and the revisited annotation file.
+Similarly, this example script first downloads one million images from the revisited distractor dataset (this can take a while). Then, it describes how to read and process images.
+```
+>> example_process_distractors
+```
 
 ### Evaluate results
 
@@ -42,11 +45,14 @@ Tested with Python 3.5.3 on Debian 8.1.
 
 ### Process images
 
-Example script that describes how to: read and process database images; read, crop and process query images:
+This example script first downloads dataset images and the revisited annotation files. Then, it describes how to: read and process database images; read, crop and process query images:
 ```
 >> python3 example_process_images
 ```
-It automatically downloads dataset images, and the revisited annotation file.
+Similarly, this example script first downloads one million images from the revisited distractor dataset (this can take a while). Then, it describes how to read and process images.
+```
+>> python3 example_process_distractors
+```
 
 ### Evaluate results
 
@@ -69,10 +75,10 @@ or
 ## Related publication
 
 ```
-@inproceedings{Radenovic-CVPR18,
+@inproceedings{RITAC18,
  author = {Radenovi\'{c}, F. and Iscen, A. and Tolias, G. and Avrithis, Y. and Chum, O.},
  title = {Revisiting Oxford and Paris: Large-Scale Image Retrieval Benchmarking},
- booktitle={CVPR},
- year={2018}
+ booktitle = {CVPR},
+ year = {2018}
 }
 ```
