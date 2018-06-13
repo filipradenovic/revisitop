@@ -95,7 +95,7 @@ def download_distractors(data_dir):
     if not os.path.isdir(dst_dir):
         print('>> Dataset {} directory does not exist.\n>> Creating: {}'.format(dataset, dst_dir))
         if not os.path.isdir(dst_dir_tmp):
-            os.makedirs(dst_dir)
+            os.makedirs(dst_dir_tmp)
         for dfi in range(nfiles):
             dl_file = dl_files.format(dfi+1)
             src_file = os.path.join(src_dir, dl_file)
