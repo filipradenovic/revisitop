@@ -60,7 +60,7 @@ def download_datasets(data_dir):
 
         gnd_src_dir = os.path.join('http://cmp.felk.cvut.cz/revisitop/data', 'datasets', dataset)
         gnd_dst_dir = os.path.join(data_dir, 'datasets', dataset)
-        gnd_dl_file = 'gnd_{}.mat'.format(dataset)
+        gnd_dl_file = 'gnd_{}.pkl'.format(dataset)
         gnd_src_file = os.path.join(gnd_src_dir, gnd_dl_file)
         gnd_dst_file = os.path.join(gnd_dst_dir, gnd_dl_file)
         if not os.path.exists(gnd_dst_file):

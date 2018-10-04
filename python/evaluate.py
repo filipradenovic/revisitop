@@ -62,7 +62,7 @@ def compute_map(ranks, gnd, kappas=[]):
     nempty = 0
 
     for i in np.arange(nq):
-        qgnd = gnd[i]['ok']
+        qgnd = np.array(gnd[i]['ok'])
 
         # no positive images, skip from the average
         if qgnd.shape[0] == 0:
@@ -72,7 +72,7 @@ def compute_map(ranks, gnd, kappas=[]):
             continue
 
         try:
-            qgndj = gnd[i]['junk']
+            qgndj = np.array(gnd[i]['junk'])
         except:
             qgndj = np.empty(0)
 
