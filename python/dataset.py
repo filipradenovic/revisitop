@@ -20,6 +20,7 @@ def configdataset(dataset, dir_main):
         cfg['qext'] = '.jpg'
 
     elif dataset == 'revisitop1m':
+        # loading imlist from a .txt file
         cfg = {}
         cfg['imlist_fname'] = os.path.join(dir_main, dataset, '{}.txt'.format(dataset))
         cfg['imlist'] = read_imlist(cfg['imlist_fname'])
