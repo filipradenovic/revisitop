@@ -23,11 +23,11 @@ function download_datasets(data_dir)
         dataset = datasets{di};
         switch dataset
             case 'roxford5k'
-                src_dir = fullfile('http://www.robots.ox.ac.uk/~vgg/data/oxbuildings');
-                dl_files = {'oxbuild_images.tgz'};
+                src_dir = fullfile('https://www.robots.ox.ac.uk/~vgg/data/oxbuildings');
+                dl_files = {'oxbuild_images-v1.tgz'};
             case 'rparis6k'
-                src_dir = fullfile('http://www.robots.ox.ac.uk/~vgg/data/parisbuildings');
-                dl_files = {'paris_1.tgz', 'paris_2.tgz'};
+                src_dir = fullfile('https://www.robots.ox.ac.uk/~vgg/data/parisbuildings');
+                dl_files = {'paris_1-v1.tgz', 'paris_2-v1.tgz'};
             otherwise
                 error ('Unkown dataset %s\n', dataset);
         end
