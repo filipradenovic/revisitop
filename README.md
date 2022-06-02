@@ -72,6 +72,10 @@ or
 >> rparis6k: mP@k[ 1  5 10] E: [100.    97.14  96.14], M: [100.    98.86  98.14], H: [94.29 90.29 89.14]
 ```
 
+### Note
+
+We updated download files for [Oxford 5k](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/) and [Paris 6k](https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/) images to use images with blurred faces as suggested by the original dataset owners. Bear in mind, "experiments have shown that one can use the face-blurred version for benchmarking image retrieval with negligible loss of accuracy".
+
 ## Related publication
 
 ```
