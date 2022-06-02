@@ -6,7 +6,7 @@ def compute_ap(ranks, nres):
     
     Arguments
     ---------
-    ranks : zerro-based ranks of positive images
+    ranks : zero-based ranks of positive images
     nres  : number of positive images
     
     Returns
